@@ -82,7 +82,10 @@ namespace Store
                     Quaternion rotation = Quaternion.identity;
                     Vector3 position = new Vector3(tilePrefab.GetSizeZ() * y, 0, tilePrefab.GetSizeX() * x);
                     GameObject newTile = Instantiate(tilePrefab.gameObject, position, rotation, tileContainer.transform);
+                    
+                    
                     tiles[y, x] = newTile.GetComponent<TileManager>();
+
                 }
             }
         }

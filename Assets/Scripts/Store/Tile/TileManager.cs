@@ -27,8 +27,8 @@ namespace Store.Tile
         public enum Walls
         {
             NORTH,
-            SOUTH,
             EAST,
+            SOUTH,
             WEST
         }
 
@@ -55,6 +55,37 @@ namespace Store.Tile
                     break;
                 case Walls.WEST:
                     westWall.SetActive(true);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void EnableWall(int wall)
+        {
+            EnableWall((Walls)wall);
+        }
+
+        public void DisableWall(int wall)
+        {
+            DisableWall((Walls)wall);
+        }
+
+        public void DisableWall(Walls wall)
+        {
+            switch (wall)
+            {
+                case Walls.NORTH:
+                    northWall.SetActive(false);
+                    break;
+                case Walls.SOUTH:
+                    southWall.SetActive(false);
+                    break;
+                case Walls.EAST:
+                    eastWall.SetActive(false);
+                    break;
+                case Walls.WEST:
+                    westWall.SetActive(false);
                     break;
                 default:
                     break;
